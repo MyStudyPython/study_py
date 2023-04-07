@@ -33,6 +33,7 @@ print(v2)  # 今天是7号,天气大暴雨
 text = "今天是{n1}号,天气{xx},明天天气是{p2}".format(n1=6, xx="晴", p2="大暴雨")
 print(text)  # 今天是6号,天气晴,明天天气是大暴雨
 
+
 """
 % 
 
@@ -48,3 +49,16 @@ v1 = tpl % (6, "晴")
 print(v1)  # 今天是6号,天气晴
 v2 = tpl % (7, "大暴雨")
 print(v2)  # 今天是7号,天气大暴雨
+
+
+"""
+f-string
+
+Python3.6+ 之后才有的
+
+形如JS 赋值语法
+"""
+day = 7
+weather = "晴"
+text = f"今天是{day}号,天气{weather}"
+print(text)  # 今天是7号,天气晴
