@@ -66,3 +66,12 @@ v6 = 1 or 2             # 1
 print(v6)
 v7 = 0 or 2             # 2
 print(v7)
+
+# 先分析and,在分析or
+v8 = 1 and 8 or 9 and 10 or 11 or 12 and 0 or "" and "xxx"
+print(v8)  # 8
+
+
+name = 23
+v1 = name or 666  # 23
+print(name)
