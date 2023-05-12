@@ -17,8 +17,27 @@ if 123:
 else:
     pass
 
+
 """
 示例
 """
 # 示例一
-# 让用户循环反复的输入2个值[必须都是数字，不是数字就重复输入，直到都是数字为止],且让两个数字相加
+# 输入的姓名不能为空
+name = input("请输入姓名：")  # " "
+data = name.strip()  # data = " " ===> False
+if data:
+    # 用户输入的姓名不为空
+    print("用户输入的姓名不为空")
+else:
+    # 用户输入为空
+    print("用户输入为空")
+
+
+name = input("请输入姓名：")  # " "
+data = name.strip()  # data = " " ===> False
+if not data:
+    # 用户输入为空
+    print("用户输入为空")
+else:
+    # 用户输入的姓名不为空
+    print("用户输入的姓名不为空")
