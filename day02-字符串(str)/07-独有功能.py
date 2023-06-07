@@ -151,3 +151,23 @@ num_bin = bin(num_int) # '0b1101110010011000101111000001'
 res = num_bin[2:] # '1101110010011000101111000001'
 
 # 实例五
+# 查询你自己在电脑上的某个目录下的所有文件，
+# 判断文件的扩展名是否是：png、PNG，
+# 如果是则输出
+
+import os
+# ['aaa.png','bbb.png','ccc.png','demo.py','.idea']
+# mac
+
+# data_list = os.listdir('/Users/XXX/gx_day03')
+# for file_name in data_list:
+#     print(file_name)
+
+# win
+data_list = os.listdir(r"C:\Users\18501\Downloads")
+for file_name in data_list:
+    # if file_name.upper().endswith('.PNG'):
+    #     print(file_name) # Logo.png
+    name_list = file_name.split(".")
+    if name_list[-1].upper() == 'PNG':
+        print(file_name)
