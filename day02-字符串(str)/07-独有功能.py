@@ -110,20 +110,26 @@ for idx in range(len(data)):
     print(data[idx])
 
 
-# 示例一
-# for循环输出message  = "叭叭叭个没完，吵死了"
+"""
+示例一
+for循环输出message  = "叭叭叭个没完，吵死了"
+"""
 message = "叭叭叭个没完，吵死了"
 for item in message:
     print(item)
 
-# 示例二
-# for循环 + range 实现倒序输出message = "叭叭叭个没完，吵死了"
+"""
+示例二
+for循环 + range 实现倒序输出message = "叭叭叭个没完，吵死了"
+"""
 message = "叭叭叭个没完，吵死了"
 for i in range(len(message) -1 , -1,-1):
     print(message[i])
 
-# 实例三
-# 让用户输入一段文字，计算输出的文本中“浪”出现的次数、
+"""
+实例三
+让用户输入一段文字，计算输出的文本中“浪”出现的次数、
+"""
 text = input(">>>")
 count = 0
 for i in text:
@@ -133,12 +139,13 @@ for i in text:
 data = "浪字出现的次数：{}次".format(count)
 print(data)
 
-# 实例四
-# 1.提示用户输入内容，内容包括：dasdasddfrevv231312321ccv啊对对对
-# 2.将用户输入的内容中的数字打印出来：231312321
-# 3.将提取出来的数字转换为整型，再将整型转换为二进制字符串
-# 4.将二进制的字符串前面的0b去掉,输出去除0b之后的二进制字符串
-
+"""
+实例四
+1.提示用户输入内容，内容包括：dasdasddfrevv231312321ccv啊对对对
+2.将用户输入的内容中的数字打印出来：231312321
+3.将提取出来的数字转换为整型，再将整型转换为二进制字符串
+4.将二进制的字符串前面的0b去掉,输出去除0b之后的二进制字符串
+"""
 text = input(">>>") # dasdasddfrevv231312321ccv啊对对对
 num = []
 for i in text:
@@ -150,11 +157,12 @@ num_int = int(num_str) # 231312321
 num_bin = bin(num_int) # '0b1101110010011000101111000001'
 res = num_bin[2:] # '1101110010011000101111000001'
 
-# 实例五
-# 查询你自己在电脑上的某个目录下的所有文件，
-# 判断文件的扩展名是否是：png、PNG，
-# 如果是则输出
-
+"""
+实例五
+查询你自己在电脑上的某个目录下的所有文件，
+判断文件的扩展名是否是：png、PNG，
+如果是则输出
+"""
 import os
 # ['aaa.png','bbb.png','ccc.png','demo.py','.idea']
 # mac
