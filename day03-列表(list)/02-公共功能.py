@@ -59,7 +59,7 @@ for item in forbidden_list:
 """
 
 """
-获取长度
+获取长度 len
 """
 data_list = [11, 22, 33, 44]
 num = len(data_list)  # 4
