@@ -14,6 +14,9 @@
 
 潜规则：
 定义全局变量时，要用大写，多个单词用下划线连接
+
+3. global 关键字
+global 是用在函数中，用于表示此变量不是新创建的数据，而是全局变量中的数据 --- 地址指向相同
 """
 
 "1.作用域基础"
@@ -102,3 +105,86 @@ if 1 == 1:
 def func():
     # 局部变量
     data = 999
+
+
+"""
+3. global 关键字
+global 是用在函数中，用于表示此变量不是新创建的数据，而是全局变量中的数据 --- 地址指向相同
+"""
+NAME = "request"
+
+
+def func():
+    global NAME
+    NAME = "response"
+    print(NAME)
+
+
+print(NAME)  # request
+func()  # response
+print(NAME)  # response
+
+"""
+关键
+- 内部global之后，变量就是全局变量
+- 赋值操作
+"""
+
+NAME = "admin"
+
+
+def func():
+    global NAME
+    NAME.upper()
+    print(NAME)
+
+
+print(NAME)  # admin
+func()  # admin
+print(NAME)  # admin
+
+"""
+这里跟函数返回值一样，
+NAME.upper() 改变的不是原数据，而是生成一份新的数据,所以NAME的值并没有被改变
+"""
+
+NAME = [11, 22]
+
+
+def func():
+    global NAME
+    NAME.append(666)
+    print(NAME)
+
+
+print(NAME)  # [11, 22]
+func()  # [11, 22, 666]
+print(NAME)  # [11, 22, 666]
+"和函数返回值一样"
+
+NAME = [11, 22]
+
+
+def func():
+    NAME = [33, 44]
+    NAME.append(999)
+    print(NAME)
+
+
+print(NAME)  # [11, 22]
+func()  # [33, 44, 999]
+print(NAME)  # [11, 22]
+
+NAME = [11, 22]
+
+
+def func():
+    global NAME
+    NAME = [33, 44]
+    NAME.append(999)
+    print(NAME)
+
+
+print(NAME)  # [11, 22]
+func()  # [33, 44, 999]
+print(NAME)  # [33, 44, 999]
