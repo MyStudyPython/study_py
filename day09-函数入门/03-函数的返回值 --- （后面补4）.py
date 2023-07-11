@@ -151,7 +151,7 @@ path_dir = os.path.dirname(path_abs)
 
 
 def read_letter(file_path, word):
-    object_file = os.path.join(path_dir, file_path)
+    object_file = os.path.join(path_dir, "file", file_path)
 
     # 判断文件路径是否存在
     res = os.path.exists(object_file)
