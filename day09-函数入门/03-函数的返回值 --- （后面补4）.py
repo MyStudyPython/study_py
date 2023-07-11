@@ -171,3 +171,17 @@ def read_letter(file_path, word):
 
 res1 = read_letter("read.txt", "opencv")
 res2 = read_letter("aaa.text", "opencv")  # None
+
+"""
+练习题 4:
+账号密码登陆 使用excel做数据库
+
+写函数，读取的用户信息并构造为字典（用户信息存放在`files/user.xlsx`文件中）
+# 构造的字典格式如下
+user_dict = {
+    "用户名":"密码"
+    ...
+}
+
+用户输入用户名和密码，进行校验。（且密码都是密文，所以，需要将用户输入的密码进行加密，然后再与Excel中的密文密码进行比较）
+"""
