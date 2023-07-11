@@ -72,7 +72,8 @@ res7 = f7()  # None
 
 def f8():
     for i in range(100):
-        print(i)
+        # print(i)
+        pass
     print("END")
 
 
@@ -106,3 +107,67 @@ def add_arg(*arg):
 
 
 v1 = add_arg(1, 2, 35, 6, 7888, 4444)  # 12376
+
+"""
+练习题 2：
+看代码写返回值
+"""
+
+
+def func():
+    print("===========开始==============")
+    for i in range(2):
+        print(i)
+    print("============结束=============")
+
+
+res = func()
+# print(res)
+# ============开始==============
+# 0
+# 1
+# ============结束=============
+# None
+
+"""
+练习题 3：
+写函数，接受两个参数
+
+参数1：字符串，文件路径。
+参数2：字符串
+函数内部：
+  - 判断文件是否存在，如果文件不存在，则返回None
+  - 读取文件的每一行数据，判断 每一行是否 包含 参数2：字符串
+    - 在，将这一行数据追加到列表中
+    - 不在，继续读下一行
+  - 返回列表，包含字符串的每一行数据
+自己调用自己写的这个函数，来进行验证。
+"""
+
+import os
+
+path_abs = os.path.abspath(__file__)
+path_dir = os.path.dirname(path_abs)
+
+
+def read_letter(file_path, word):
+    object_file = os.path.join(path_dir, file_path)
+
+    # 判断文件路径是否存在
+    res = os.path.exists(object_file)
+    if not res:
+        return
+
+    file_object = open(object_file, mode="r", encoding="utf-8")
+    list = []
+
+    for line in file_object:
+        if word in line:
+            list.append(line)
+
+    file_object.close()
+    return list
+
+
+res1 = read_letter("read.txt", "opencv")
+res2 = read_letter("aaa.text", "opencv")  # None
