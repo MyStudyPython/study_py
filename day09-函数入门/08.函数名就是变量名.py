@@ -3,6 +3,7 @@
 
 1. 函数做元素
 2. 函数名赋值
+3. 函数名做参数和返回值
 """
 
 
@@ -165,3 +166,40 @@ def len(a1, a2):
 # 以后执行len函数，只能按照重新定义的来使用
 v3 = len(1, 2)
 print(v3)
+
+"3. 函数名做参数和返回值"
+
+
+def plus(num):
+    return num + 100
+
+
+def handler(func):
+    res = func(10)
+    print(res)
+
+
+handler(plus)
+"""
+函数名作参数
+调用handler函数，参数为plus，未加括号不执行，传入后在res = func(10) -=> plus(10)
+"""
+
+
+def plus(num):
+    return num + 100
+
+
+def handler():
+    print("执行handler函数")
+    return plus
+
+
+result = handler()
+data = result(20)  # 120
+print(result)  # <function plus at 0x0000029D7BCA20C0>
+
+"""
+函数名作返回值
+运行handler()函数，函数内将plus函数返回到了result变量，后执行result变量
+"""
