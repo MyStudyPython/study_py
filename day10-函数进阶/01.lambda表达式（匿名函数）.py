@@ -72,3 +72,9 @@ res = func([123, 456, 789])  # None
 func = lambda data_list: data_list.append(999)
 
 value = func([123, 456, 789])  # None
+
+"""
+案例一：看代码，写成打印的值
+"""
+f1 = lambda data: data.replace("中国", "四川")
+res = f1("中国联通")  # 四川联通
