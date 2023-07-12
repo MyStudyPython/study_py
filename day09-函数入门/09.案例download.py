@@ -139,7 +139,7 @@ def download_item(title, url):
     file_object.close()
 
 
-fun_dist = {"1": image_area, "2": nba_area, "3": video_area}
+FUN_DIST = {"1": image_area, "2": nba_area, "3": video_area}
 
 
 def main():
@@ -151,7 +151,7 @@ def main():
         if choice.upper() == "Q":
             break
 
-        choice_item = fun_dist.get(choice)
+        choice_item = FUN_DIST.get(choice)
         # 选择错了重复选择（错误提示）
         if not choice_item:
             print("\n选择错误，请重新选择")
